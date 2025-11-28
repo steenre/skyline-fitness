@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <div class="loadScreen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <div class="spinner-text">
+                <p>Loading content</p>
+            </div>
+        </div>
+    </div>
     <div class="wrapper">
         <div class="container">
         <header>
@@ -28,6 +36,7 @@
         </div>
 
     </div>
-
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
