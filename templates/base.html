@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} | GYM</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="loadScreen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <div class="spinner-text">
+                <p>Loading content</p>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+        <header>
+            <h3>Skyline Fitness</h3>
+            <div class="nav-btn"></div>
+            <nav>
+                <ul>
+                    <a href="{% url 'landing' %}">
+                        <li>Home</li>
+                    </a>
+                    <a href="{% url 'about' %}">
+                        <li>About Us</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="#">
+                        <li>Services</li>
+                    </a>
+                    </a>
+                    <a href="{% url 'classes' %}">
+                        <li>Classes and Schedule</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+            {% block content %}
+            {% endblock %}
+        <footer>
+            <div class="footer-title">
+                <h3>Skyline Fitness</h3>
+            </div>
+            <div class="footer-others">
+                <div class="footer-other">Contact</div>
+                <div class="footer-other">Social</div>
+                <div class="footer-other">Quick Links</div>
+            </div>
+        </footer>
+        </div>
+
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

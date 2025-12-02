@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Welcome {% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="hero-img"></div>
+    <div class="hero-info">
+        <h2>Transform Your Fitness Journey Today!</h2>
+        <p>Modern Equipment. Expert Trainers. Open 24/7</p>
+        <button class="cta get-started">Get Started</button>
+    </div>
+</section>
+<section class="features">
+    <div class="features-info">
+        <h2>Why Choose Us?</h2>
+        <p>I thought you'd never ask</p>
+        <div class="feature-cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>            
+        </div>
+    </div>
+</section>
+<section class="about-us">
+    <div class="about-us-info">
+        <h2>Get to know us</h2>
+        <p>We are more than a GYM - We are a community</p>
+        <a href="{% url 'about' %}">Learn More About Us</a>
+    </div>
+</section>
+<section class="membership">
+    <div class="membership-info">
+        <h2>Membership Plans</h2>
+
+        <div class="membership-cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
