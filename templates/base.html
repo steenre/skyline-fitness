@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skyline fitness is a GYM facility located along Eldoret - Kitale highway opposite Galana Fuel station, soy">
     <title>{% block title %}{% endblock %} | GYM</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 </head>
 <body>
     <div class="loadScreen">
@@ -19,7 +23,7 @@
     <div class="wrapper">
         <div class="container">
         <header>
-            <h3>Skyline Fitness</h3>
+                <h3>Skyline Fitness</h3>
             <div class="nav-btn"></div>
             <nav>
                 <ul>
@@ -29,11 +33,11 @@
                     <a href="{% url 'about' %}">
                         <li>About Us</li>
                     </a>
-                    <a href="#">
+                    <a href="{% url 'contact-us' %}">
                         <li>Contact</li>
                     </a>
-                    <a href="#">
-                        <li>Services</li>
+                    <a href="{% url 'facilities' %}">
+                        <li>Facilities</li>
                     </a>
                     </a>
                     <a href="{% url 'classes' %}">
@@ -42,21 +46,76 @@
                 </ul>
             </nav>
         </header>
+        <div class="nav-overlay"></div>
             {% block content %}
             {% endblock %}
+            <div class="whatsapp-btn"></div>
         <footer>
             <div class="footer-title">
                 <h3>Skyline Fitness</h3>
             </div>
             <div class="footer-others">
-                <div class="footer-other">Contact</div>
-                <div class="footer-other">Social</div>
-                <div class="footer-other">Quick Links</div>
+                <div class="footer-other">
+                    <h4>Contact</h4>
+                    <ul>
+                        <a href="">
+                            <li>Email</li>
+                        </a>
+                        <a href="">
+                            <li>Whatsapp</li>
+                        </a>
+                        <a href="">
+                            <li>Call</li>
+                        </a>
+                        <a href="">
+                            <li>SMS</li>
+                        </a>
+                    </ul>                    
+                </div>
+                <div class="footer-other">
+                    <h4>Social</h4>
+                    <ul>
+                        <a href="#">
+                            <li><i class="fa fa-youtube"></i> Youtube</li>
+                        </a>
+                        <a href="">
+                            <li><i class="fa fa-trash"></i> Tiktok</li>
+                        </a>
+                        <a href="">
+                            <li>Instagram</li>
+                        </a>
+                        <a href="">
+                            <li>Facebook</li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="footer-other">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <a href="{% url 'landing' %}">
+                            <li>Home</li>
+                        </a>
+                        <a href="{% url 'classes' %}">
+                            <li>Classes and Schedule</li>
+                        </a>
+                        <a href="{% url 'about' %}">
+                            <li>About us</li>
+                        </a>
+                        <a href="{% url 'facilities' %}">
+                            <li>Facilities</li>
+                        </a>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&COPY;</p><p>All Rights Reserved</p>
             </div>
         </footer>
         </div>
 
     </div>
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
 </body>
 </html>

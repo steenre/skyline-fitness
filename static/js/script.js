@@ -7,7 +7,9 @@ window.addEventListener("load", ()=>{
 
 let nav = document.querySelector('nav')
 let navBtn = document.querySelector('.nav-btn')
+let no = document.querySelector('.nav-overlay')
 
 navBtn.addEventListener('click', ()=>{
     nav.classList.toggle('active');
+    no.classList.toggle('active')
 })

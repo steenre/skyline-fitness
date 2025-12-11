@@ -8,3 +8,9 @@ def about(request):
 
 def classes(request):
     return render(request, 'main/classes.html')
+
+def contact(request):
+    return render(request, 'main/contact.html')
+
+def facilities(request):
+    return render(request, 'main/facilities.html')
