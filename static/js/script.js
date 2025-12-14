@@ -12,4 +12,6 @@ let no = document.querySelector('.nav-overlay')
 navBtn.addEventListener('click', ()=>{
     nav.classList.toggle('active');
     no.classList.toggle('active')
+    navBtn.classList.toggle('active')
 })
+

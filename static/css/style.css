@@ -191,11 +191,49 @@ header h3 {
 .nav-btn {
     width: 50px;
     height: 50px;
-    background: var(--electric-blue);
+    /* background: var(--electric-blue); */
     border-radius: 10px;
     z-index: 3;
     cursor: pointer;
     display: none;
+    position: relative;
+    justify-content: center;
+}
+
+.nav-btn span {
+    width: 2rem;
+    height: 3px;
+    background: var(--electric-blue);
+    position: absolute;
+}
+
+.nav-btn span:nth-child(1) {
+    top: 25%;
+}
+
+.nav-btn span:nth-child(2), .nav-btn span:nth-child(3) {
+    top: 50%;
+}
+
+.nav-btn span:nth-child(4) {
+    top: 75%;
+}
+
+.nav-btn.active {
+
+    span:nth-child(1), span:nth-child(4) {
+        display: none;
+    }
+
+    span:nth-child(2) {
+        transform: rotate(-135deg);
+        background: red;
+    }
+
+    span:nth-child(3) {
+        transform: rotate(135deg);
+        background: red;
+    }
 }
 
 nav {
@@ -253,7 +291,8 @@ nav.active {
 
     nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 25px;
+        /* gap: 15px; */
     }
 }
 
@@ -269,6 +308,10 @@ nav.active {
     border-radius: 50%;
     animation: pulse 1.2s ease-in-out infinite;
     cursor: pointer;
+}
+
+.whatsapp-btn svg {
+    fill: var(--vibrant-orange);
 }
 
 footer {
@@ -294,7 +337,7 @@ footer .footer-others {
 footer .footer-other {
     width: 300px;
     position: relative;
-    height: 250px;
+    height: 300px;
     /* height: auto; */
     display: flex;
     flex-direction: column;
@@ -310,10 +353,19 @@ footer .footer-other h4,footer.footer-other p {
 footer .footer-other ul {
     width: 250px;
     list-style-type: none;
+    /* display: flex; */
+}
+
+footer .footer-other ul li svg {
+    fill: var(--electric-blue);
+    width: 30px;
+    aspect-ratio: 1/1;
 }
 
 footer .footer-other ul li {
     margin: 1rem 0;
+    display: flex;
+    align-items: center;
 }
 
 footer .footer-other::after {
@@ -339,11 +391,22 @@ footer .copyright {
 a {
     text-decoration: none;
     color: var(--electric-blue);
+    position: relative;
 }
 
-a:hover {
-    color: var(--vibrant-orange);
-    text-decoration: underline;
+a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--vibrant-orange);
+    transition: .25s linear;
+    left: 0;
+}
+
+a:hover::after {
+    width: 100%;
 }
 
 section {
@@ -417,7 +480,8 @@ section {
 .class-intro-info,
 .contact-details,
 .social,
-.gallery {
+.gallery,
+.google-map {
     width: 100%;
     padding: .5rem 0;
     min-height: 600px;
@@ -492,7 +556,8 @@ section {
 }
 
 .feature-cards, 
-.membership-cards {
+.membership-cards,
+.social-cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -501,19 +566,81 @@ section {
     padding: .5rem 0;
 }
 
-.feature-cards .card, 
-.membership-cards .card {
+.feature-cards .card {
     width: 300px;
-    height: 400px;
+    height: 150px;
     background: var(--light-gray);
     border-radius: 10px;
-    box-shadow: 0 4px 10px hsla(0, 0%, 100%, 0.911);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-cards .card svg {
+    width: 70px;
+    aspect-ratio: 1/1;
+    fill: var(--electric-blue);
+}
+
+.feature-cards .card p {
+    color: #000;
+}
+
+.membership-cards .card {
+    width: 300px;
+    height: 250px;
+    background: var(--light-gray);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.membership-cards .card p {
+    color: #000;
+}
+
+.membership-cards .card p:nth-child(2) {
+    color: var(--electric-blue);
+}
+
+.membership-cards .card:hover p:nth-child(2) {
+    color: var(--vibrant-orange);
 }
 
 .feature-cards .card:hover,
 .membership-cards .card:hover {
     transform: scale(1.025);
 }
+
+.google-map .map {
+    width: 100%;
+    height: 500px;
+    background: red;    
+}
+
+.social-cards .card {
+    width: 300px;
+    height: 150px;
+    background: var(--light-gray);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-cards .card p {
+    color: var(--electric-blue);
+}
+.social-cards .card svg {
+    fill: var(--electric-blue);
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+
 
 @media (max-width:768px) {
     .hero-info h2,
